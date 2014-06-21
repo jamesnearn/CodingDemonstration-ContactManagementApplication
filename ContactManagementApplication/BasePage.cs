@@ -18,6 +18,15 @@ namespace ContactManagementApplication
             }
         }
 
+        public SqlCommand SqlCmd(string SQL)
+        {
+            SqlCommand cmd = new SqlCommand(SQL, new SqlConnection(ConnectionString));
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandTimeout = 300;
+            return cmd;
+        }
+
+
         public SqlCommand ProcCmd(string procName)
         {
             SqlCommand cmd = new SqlCommand(procName, new SqlConnection(ConnectionString));

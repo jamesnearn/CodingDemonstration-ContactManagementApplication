@@ -4,7 +4,32 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:HyperLink ID="hypAdd" runat="server" NavigateUrl="~/ContactEdit.aspx">Add a contact</asp:HyperLink>
-    <asp:GridView ID="gridContacts" DataSourceID="sqlContacts" runat="server">
+
+    <asp:GridView ID="gridContacts" DataSourceID="sqlContacts" runat="server" AutoGenerateColumns="false">
+        <Columns>
+            <asp:TemplateField HeaderText="Name">
+                <ItemTemplate>
+                    <%#Eval("FirstName") %> <%#Eval("LastName") %>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Address">
+                <ItemTemplate>
+                    <%#Eval("Address1") %><br />
+                    <%#Eval("Address2") %><br />
+                    <%#Eval("City") %>, <%#Eval("State")%>, <%#Eval("Zip") %>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Active">
+                <ItemTemplate>
+                    <asp:CheckBox ID="chkActive" runat="server" Checked='<%#Eval("IsActive") %>' Enabled="false" />
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField>
+                <ItemTemplate>
+                    <asp:HyperLink ID="hypEdit" runat="server" NavigateUrl=<%#Eval("ContactID", "~/ContactEdit.aspx?ContactID={0}") %>>Edit</asp:HyperLink>
+                </ItemTemplate>
+            </asp:TemplateField>
+        </Columns>
         <EmptyDataTemplate>
             No data exists yet!
         </EmptyDataTemplate>
