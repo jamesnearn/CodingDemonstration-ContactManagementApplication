@@ -7,11 +7,10 @@ using System.Web.UI.WebControls;
 
 namespace ContactManagementApplication
 {
-    public partial class ContactsList : System.Web.UI.Page
+    public partial class ContactsList : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
         protected override void OnPreRender(EventArgs e)
         {
