@@ -1,8 +1,20 @@
-﻿.header {
+﻿body {
+    background-color: lightgray;
+}
+.header {
     border-bottom: solid 1px gray;
-    margin-bottom: 30px;
     padding: 10px;
     background-color: #8b4141;
+    color: white;
+    font-weight: bolder;
+    font-size: 125%;
+}
+.subheader {
+    border-bottom: solid 1px gray;
+    margin-bottom: 15px;
+    padding: 5px;
+    padding-left: 10px;
+    background-color: white;
     color: white;
     font-weight: bolder;
 }

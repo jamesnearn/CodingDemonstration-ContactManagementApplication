@@ -7,17 +7,16 @@ using System.Web.UI.WebControls;
 
 namespace ContactManagementApplication
 {
-    public partial class Default1 : System.Web.UI.Page
+    public partial class ContactsList : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-
-        protected void btnLogin_Click(object sender, EventArgs e)
+        protected override void OnPreRender(EventArgs e)
         {
-            // instructions say to let anything in!
-            Response.Redirect("ContactsList.aspx");
+            hypAddFooter.Visible = (gridContacts.Rows.Count > 0);
+            base.OnPreRender(e);
         }
     }
 }

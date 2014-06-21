@@ -27,6 +27,9 @@
         <div class="header">
             My Simple Contact Management Application
         </div>
+        <div class="subheader">
+            <asp:HyperLink ID="hypHome" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>
+        </div>
         <div class="content">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>

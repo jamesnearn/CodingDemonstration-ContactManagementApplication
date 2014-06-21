@@ -10,42 +10,42 @@
 namespace ContactManagementApplication {
     
     
-    public partial class Default {
+    public partial class ContactsList {
         
         /// <summary>
-        /// head control.
+        /// hypAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.HyperLink hypAdd;
         
         /// <summary>
-        /// form1 control.
+        /// gridContacts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.GridView gridContacts;
         
         /// <summary>
-        /// hypHome control.
+        /// hypAddFooter control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hypHome;
+        protected global::System.Web.UI.WebControls.HyperLink hypAddFooter;
         
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// sqlContacts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.SqlDataSource sqlContacts;
     }
 }
