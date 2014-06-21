@@ -1,0 +1,11 @@
+﻿.header {
+    border-bottom: solid 1px gray;
+    margin-bottom: 30px;
+    padding: 10px;
+    background-color: #8b4141;
+    color: white;
+    font-weight: bolder;
+}
+.content {
+    padding: 10px;
+}
