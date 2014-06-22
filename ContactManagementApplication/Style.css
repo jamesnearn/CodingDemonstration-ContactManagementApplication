@@ -1,6 +1,7 @@
 ﻿body {
-    background-color: lightgray;
+    background-color: #e0e0e0;
 }
+
 .header {
     border-bottom: solid 1px gray;
     padding: 10px;
@@ -9,6 +10,7 @@
     font-weight: bolder;
     font-size: 125%;
 }
+
 .subheader {
     border-bottom: solid 1px gray;
     margin-bottom: 15px;
@@ -18,6 +20,18 @@
     color: white;
     font-weight: bolder;
 }
+
 .content {
     padding: 10px;
+}
+
+.gridLayout th {
+    background-color: white;
+    padding: 3px;
+    width: 140px;
+}
+
+.gridLayout td {
+    background-color: #d0d0d0;
+    padding: 3px;
 }

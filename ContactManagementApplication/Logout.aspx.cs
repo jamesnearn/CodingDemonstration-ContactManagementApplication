@@ -7,18 +7,12 @@ using System.Web.UI.WebControls;
 
 namespace ContactManagementApplication
 {
-    public partial class Default1 : BasePage
+    public partial class Logout : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-
-        protected void btnLogin_Click(object sender, EventArgs e)
-        {
-            // instructions say to let anything in!
-            Session["UserID"] = 1;
-            Response.Redirect("ContactsList.aspx");
+            Session.Clear();
+            Response.Redirect("Default.aspx");
         }
     }
 }

@@ -13,5 +13,12 @@ namespace ContactManagementApplication
         {
 
         }
+
+        protected override void OnPreRender(EventArgs e)
+        {
+            hypContactsList.Visible = (Session["UserID"] != null);
+            hypLogout.Visible = (Session["UserID"] != null);
+            base.OnPreRender(e);
+        }
     }
 }

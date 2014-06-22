@@ -33,6 +33,14 @@ namespace ContactManagementApplication
                         txtState.Text = (string)dr["State"];
                         txtZip.Text = (string)dr["Zip"];
                         chkIsActive.Checked = (bool)dr["IsActive"];
+                        bool IsActive = (bool)dr["IsActive"];
+                        if (IsActive)
+                            btnToggleIsActive.Text = "Delete Contact";
+                        else
+                            btnToggleIsActive.Text = "Undelete Contact";
+
+                        lblDateCreated.Text = dr["DateCreated"].ToString();
+                        lblDateModified.Text = dr["DateModified"].ToString();
                     }
                 }
             }
@@ -43,6 +51,7 @@ namespace ContactManagementApplication
             pnlID.Visible = (lblID.Text.Length > 0);
             pnlDateCreated.Visible = (lblDateCreated.Text.Length > 0);
             pnlDateModified.Visible = (lblDateModified.Text.Length > 0);
+            btnToggleIsActive.Visible = (Request.QueryString["ContactID"] != null);
             base.OnPreRender(e);
         }
 
@@ -68,6 +77,20 @@ namespace ContactManagementApplication
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
+            Response.Redirect("ContactsList.aspx");
+        }
+
+        protected void btnToggleIsActive_Click(object sender, EventArgs e)
+        {
+            if (Request.QueryString["ContactID"] != null)
+            {
+                int ContactID = int.Parse(Request.QueryString["ContactID"]);
+
+                SqlCommand cmd = ProcCmd("spContactSave");
+                cmd.Parameters.AddWithValue("@ContactID", ContactID).DbType = System.Data.DbType.Int32;
+                cmd.Parameters.AddWithValue("@IsActive", !chkIsActive.Checked).DbType = System.Data.DbType.Boolean;
+                DataTable dt = GetDataTable(cmd);
+            }
             Response.Redirect("ContactsList.aspx");
         }
     }

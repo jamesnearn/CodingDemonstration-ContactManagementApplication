@@ -5,11 +5,14 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:HyperLink ID="hypAdd" runat="server" NavigateUrl="~/ContactEdit.aspx">Add a contact</asp:HyperLink>
 
-    <asp:GridView ID="gridContacts" DataSourceID="sqlContacts" runat="server" AutoGenerateColumns="false">
+    <asp:GridView ID="gridContacts" DataSourceID="sqlContacts" runat="server" AutoGenerateColumns="false" CssClass="gridLayout">
         <Columns>
             <asp:TemplateField HeaderText="Name">
                 <ItemTemplate>
-                    <%#Eval("FirstName") %> <%#Eval("LastName") %>
+                    <asp:HyperLink ID="hypEdit" runat="server" NavigateUrl='<%#Eval("ContactID", "~/ContactEdit.aspx?ContactID={0}") %>'>
+                        <%#Eval("FirstName") %>&nbsp;
+                        <%#Eval("LastName") %>
+                    </asp:HyperLink>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Address">
@@ -22,11 +25,6 @@
             <asp:TemplateField HeaderText="Active">
                 <ItemTemplate>
                     <asp:CheckBox ID="chkActive" runat="server" Checked='<%#Eval("IsActive") %>' Enabled="false" />
-                </ItemTemplate>
-            </asp:TemplateField>
-            <asp:TemplateField>
-                <ItemTemplate>
-                    <asp:HyperLink ID="hypEdit" runat="server" NavigateUrl=<%#Eval("ContactID", "~/ContactEdit.aspx?ContactID={0}") %>>Edit</asp:HyperLink>
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>

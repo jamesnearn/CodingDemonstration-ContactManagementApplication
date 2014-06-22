@@ -29,6 +29,8 @@
         </div>
         <div class="subheader">
             <asp:HyperLink ID="hypHome" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>
+            <asp:HyperLink ID="hypContactsList" runat="server" NavigateUrl="~/ContactsList.aspx">Contacts</asp:HyperLink>
+            <asp:HyperLink ID="hypLogout" runat="server" NavigateUrl="~/Logout.aspx">Logout</asp:HyperLink>
         </div>
         <div class="content">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

@@ -32,6 +32,7 @@
     <asp:Panel ID="pnlDateModified" runat="server">
         Date Modified:<asp:Label ID="lblDateModified" runat="server" Text=""></asp:Label>
     </asp:Panel>
-    <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" />
+    <asp:Button ID="btnSave" runat="server" Text="Save Contact" OnClick="btnSave_Click" />
     <asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click" />
+    <asp:Button ID="btnToggleIsActive" runat="server" Text="ToggleIsActive" OnClick="btnToggleIsActive_Click" />
 </asp:Content>
